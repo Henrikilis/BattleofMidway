@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float _moveSpeed;
-
     private PlayerInputActions _playerInput;
     private Rigidbody2D _rb;
 
