@@ -17,11 +17,11 @@ GameObject:
   - component: {fileID: 7583527864620909779}
   m_Layer: 0
   m_Name: EnemyShip1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2873823548634286091
 Transform:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shipVelocity: {x: 0, y: -1}
-  _shipSpeed: 0
+  _shipSpeed: 3
 --- !u!50 &2873823548634286090
 Rigidbody2D:
   serializedVersion: 4
