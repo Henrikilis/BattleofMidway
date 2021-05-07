@@ -30,7 +30,7 @@ public class playerCollision : MonoBehaviour
             
             _hp -= 1;
             _bulletTimer = _bulletCooldown;
-
+            SimplePool.Despawn(collision.gameObject);
             // GameOver
             if(_hp <= 0)
             {

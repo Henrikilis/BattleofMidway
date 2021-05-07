@@ -6,8 +6,13 @@ public class Despawner : MonoBehaviour
 {
     public float _initialLifeSpan;
     private float _bulletLifeSpan;
-   
-    void Update()
+
+    private void Awake()
+    {
+        _bulletLifeSpan = _initialLifeSpan;
+    }
+
+    void FixedUpdate()
     {
         _bulletLifeSpan -= Time.deltaTime;
 

@@ -19,16 +19,16 @@ public class enemyShoot : MonoBehaviour
     void Start()
     {
         _b = _bullet.GetComponent<Bullet>();
-        fireInterval = Random.Range(0, 10);
-        fireRate = fireInterval;
-        SimplePool.Preload(_bullet, 5);
-        _b._velocity = bulletVelocity;
-        _b._speed = bulletSpeed;
+        fireInterval = Random.Range(0, 10);   
+        SimplePool.Preload(_bullet, 5);     
     }
 
     
     void FixedUpdate()
     {
+        _b._velocity = bulletVelocity;
+        _b._speed = bulletSpeed;
+
         if (fireRate < fireInterval)
             fireRate += Time.deltaTime;
         else if (fireRate >= fireInterval)
@@ -43,9 +43,7 @@ public class enemyShoot : MonoBehaviour
         fireInterval = Random.Range(0, 10);
         foreach (GameObject obj in _muzzles)
         {       
-            GameObject bullet = SimplePool.Spawn(_bullet, obj.gameObject.transform.position, Quaternion.identity);
-            _b._velocity = bulletVelocity;
-            _b._speed = bulletSpeed;
+            GameObject bullet = SimplePool.Spawn(_bullet, obj.gameObject.transform.position, Quaternion.identity);          
         }
 
     }

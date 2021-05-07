@@ -22,15 +22,14 @@ public class PlayerBullet : MonoBehaviour
         _b = _simpleBullet.GetComponent<Bullet>();
         _playerInput = new PlayerInputActions();
         SimplePool.Preload(_simpleBullet, 30);
-        fireRate = fireInterval;
-        _b._velocity = bulletVelocity;
-        _b._speed = bulletSpeed;
-
+        fireRate = fireInterval;       
     }
 
     private void FixedUpdate()
     {
-        
+        _b._velocity = bulletVelocity;
+        _b._speed = bulletSpeed;
+
         if (fireRate < fireInterval)
             fireRate += Time.deltaTime;
         else if (fireRate == fireInterval)
@@ -54,9 +53,7 @@ public class PlayerBullet : MonoBehaviour
 
         foreach (GameObject obj in _muzzles)
         {
-           GameObject bullet  = SimplePool.Spawn(_simpleBullet, obj.gameObject.transform.position, Quaternion.identity);
-            _b._velocity = bulletVelocity;
-            _b._speed = bulletSpeed;
+           GameObject bullet  = SimplePool.Spawn(_simpleBullet, obj.gameObject.transform.position, Quaternion.identity);          
             bullet.transform.tag = "FriendlyBullet";
         }
         

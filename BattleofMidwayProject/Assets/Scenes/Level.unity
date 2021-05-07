@@ -2168,17 +2168,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1602949456, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
-      propertyPath: bulletVelocity.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1656609135581450784, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1656609135581450784, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1656609135581450787, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
       propertyPath: m_RootOrder
@@ -2240,10 +2232,6 @@ PrefabInstance:
     - target: {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
       propertyPath: m_Name
       value: EnemyShip1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2873823548634286091, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
       propertyPath: m_RootOrder
