@@ -20,7 +20,7 @@ public class enemyShoot : MonoBehaviour
     {
         _b = _bullet.GetComponent<Bullet>();
         fireInterval = Random.Range(0, 10);
-        fireRate 
+        fireRate = fireInterval;
         SimplePool.Preload(_bullet, 5);
         _b._velocity = bulletVelocity;
         _b._speed = bulletSpeed;
@@ -42,8 +42,7 @@ public class enemyShoot : MonoBehaviour
     {
         fireInterval = Random.Range(0, 10);
         foreach (GameObject obj in _muzzles)
-        {
-            Debug.Log("atirei");
+        {       
             GameObject bullet = SimplePool.Spawn(_bullet, obj.gameObject.transform.position, Quaternion.identity);
             _b._velocity = bulletVelocity;
             _b._speed = bulletSpeed;
