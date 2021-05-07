@@ -10,6 +10,8 @@ public class playerCollision : MonoBehaviour
     [Header("Cooldown After Hit")]
     public float _bulletCooldown;
     float _bulletTimer;
+    [Header("Damage Tag")]
+    public string _damageTag;
 
     void Start()
     {
@@ -23,10 +25,18 @@ public class playerCollision : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Hostile" && _bulletTimer <= 0)
-        {
+        if(collision.tag == _damageTag && _bulletTimer <= 0)
+        {        
+            
             _hp -= 1;
             _bulletTimer = _bulletCooldown;
+
+            // GameOver
+            if(_hp <= 0)
+            {
+                Destroy(this.gameObject);
+
+            }
         }
     }
 }

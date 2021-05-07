@@ -21,8 +21,9 @@ public class PlayerBullet : MonoBehaviour
        if(context.performed)
         {
             foreach (GameObject obj in _muzzles)
-            {
-                SimplePool.Spawn(_simpleBullet, obj.gameObject.transform.position, Quaternion.identity);
+            {                
+             GameObject bullet = SimplePool.Spawn(_simpleBullet, obj.gameObject.transform.position, Quaternion.identity);
+             bullet.transform.tag = "FriendlyBullet";
             }
 
         }
