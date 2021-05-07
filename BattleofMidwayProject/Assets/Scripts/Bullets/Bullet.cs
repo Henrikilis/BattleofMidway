@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Header("Bullet Propreties")]
+    
     public Vector2 _velocity;
     public float _speed;
     public float _rotation;
@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
 
     // Bullet Movement
     void Update()
-    {
+    {     
         transform.Translate(_velocity * _speed * Time.deltaTime);
     }
 }

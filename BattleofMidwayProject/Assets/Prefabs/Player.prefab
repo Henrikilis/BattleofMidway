@@ -164,7 +164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1656609135581450787
 Transform:
   m_ObjectHideFlags: 0
@@ -287,7 +287,8 @@ MonoBehaviour:
   - {fileID: 1584476971}
   _simpleBullet: {fileID: 1208552257291661453, guid: bf4f833005449b44c92df0a148a10d32, type: 3}
   fireInterval: 1
-  fireRate: 0
+  bulletSpeed: 20
+  bulletVelocity: {x: 0, y: -1}
 --- !u!114 &7329385106491816850
 MonoBehaviour:
   m_ObjectHideFlags: 0
