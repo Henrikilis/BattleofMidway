@@ -10,23 +10,53 @@ public class PlayerBullet : MonoBehaviour
 
     public GameObject _simpleBullet;
 
+    public float fireInterval;
+    [SerializeField]
+    private float fireRate;
+
     void Start()
     {
         _playerInput = new PlayerInputActions();
         SimplePool.Preload(_simpleBullet, 30);
+        fireRate = fireInterval;
+
+        foreach (GameObject obj in _muzzles)
+        {
+            obj.SetActive(true);
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        
+        if (fireRate < fireInterval)
+            fireRate += Time.deltaTime;
+        else if (fireRate == fireInterval)
+        {
+            fireRate = fireInterval;
+        }
     }
 
     public void Shoot(InputAction.CallbackContext context)
     {
-       if(context.performed)
+       if(context.performed && fireRate >= fireInterval)
         {
-            foreach (GameObject obj in _muzzles)
-            {                
-             GameObject bullet = SimplePool.Spawn(_simpleBullet, obj.gameObject.transform.position, Quaternion.identity);
-             bullet.transform.tag = "FriendlyBullet";
-            }
-
+            spawnBullet();
+            fireRate = 0;
         }
+
+    }
+
+    void spawnBullet()
+    {
+
+        foreach (GameObject obj in _muzzles)
+        {
+           GameObject bullet  = SimplePool.Spawn(_simpleBullet, obj.gameObject.transform.position, Quaternion.identity);
+           bullet.transform.tag = "FriendlyBullet";
+        }
+        
 
     }
     
