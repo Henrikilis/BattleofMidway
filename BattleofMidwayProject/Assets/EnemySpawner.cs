@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
     {
         _currentWave = _waves[_currentWaveNo];
 
-        if (_hasPrepared)
+        if (!_hasPrepared)
         {
             prepareWave();
             _hasPrepared = true;
@@ -55,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject _randomEnemy = _currentWave._typeOfEnemies[Random.Range(0, _currentWave._typeOfEnemies.Length)];
         Transform _randomPoint  = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
-
+        Debug.Log("preparei");
         SimplePool.Preload(_randomEnemy, 30);
     }
 
@@ -67,6 +67,7 @@ public class EnemySpawner : MonoBehaviour
             GameObject _randomEnemy = _currentWave._typeOfEnemies[Random.Range(0, _currentWave._typeOfEnemies.Length)];
             Transform _randomPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
            SimplePool.Spawn(_randomEnemy, _randomPoint.position, Quaternion.identity);
+            Debug.Log("spawn");
             _currentWave._noOfEnemies--;
             _nextSpawnTime = Time.time + _currentWave._spawnInterval;
             if(_currentWave._noOfEnemies == 0)           

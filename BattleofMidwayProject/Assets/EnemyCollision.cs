@@ -10,7 +10,12 @@ public class EnemyCollision : MonoBehaviour
         if (collision.tag == "FriendlyBullet")
         {
             SimplePool.Despawn(this.gameObject);
-           
+            Debug.Log("matei");
+        }
+        if (collision.tag == "Floor")
+        {
+            SimplePool.Despawn(this.gameObject);
+            Debug.Log("Hit my head");
         }
     }
 }
