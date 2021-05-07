@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Ship Speed")]
     [SerializeField]
     private float _moveSpeed;
     private PlayerInputActions _playerInput;

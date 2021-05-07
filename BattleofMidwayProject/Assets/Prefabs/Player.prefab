@@ -94,6 +94,9 @@ GameObject:
   - component: {fileID: 1656609135581450786}
   - component: {fileID: 1656609135581450812}
   - component: {fileID: 1656609135581450813}
+  - component: {fileID: 1602949454}
+  - component: {fileID: 1602949455}
+  - component: {fileID: 1602949456}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -176,3 +179,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 10
+--- !u!114 &1602949454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656609135581450784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff22755bd59238f4280df4af2bb0702a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MainCamera: {fileID: 0}
+--- !u!114 &1602949455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656609135581450784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b4697b7ab0779488d179497144a381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startHp: 3
+  _bulletCooldown: 1
+--- !u!114 &1602949456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656609135581450784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e789770ebb5e4597c874ef4d9745c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
