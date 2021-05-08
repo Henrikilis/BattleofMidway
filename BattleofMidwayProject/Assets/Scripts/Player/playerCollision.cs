@@ -19,11 +19,13 @@ public class playerCollision : MonoBehaviour
     private PlayerController _pc;
 
     public TMP_Text _hpText;
+    private SpriteRenderer _sr;
 
     void Start()
     {
         _pc = GetComponent<PlayerController>();
         _anim = GetComponentInChildren<Animator>();
+        _sr = GetComponentInChildren<SpriteRenderer>();
         _hp = _startHp;
         _hpText.text = _hp.ToString();
     }
@@ -32,6 +34,14 @@ public class playerCollision : MonoBehaviour
     void Update()
     {
         _bulletTimer -= Time.deltaTime;
+
+        if(_bulletTimer > 0)
+        _sr.color = new Color(1f, 1f, 1f,.6f);
+        else
+        _sr.color = new Color(1f, 1f, 1f,1f);
+
+
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
