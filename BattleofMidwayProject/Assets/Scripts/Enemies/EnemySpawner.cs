@@ -56,6 +56,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         GameObject[] _totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
         //Check to next wave
         if (_totalEnemies.Length <= 0)
         {
