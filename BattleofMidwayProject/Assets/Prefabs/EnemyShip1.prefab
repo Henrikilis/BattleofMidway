@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2873823548634286092}
   - component: {fileID: 1840517898354852900}
   - component: {fileID: 7583527864620909779}
+  - component: {fileID: 85524476872957342}
   m_Layer: 0
   m_Name: EnemyShip1
   m_TagString: Enemy
@@ -179,6 +180,25 @@ MonoBehaviour:
   fireInterval: 0
   bulletSpeed: 10
   bulletVelocity: {x: 0, y: -1}
+--- !u!95 &85524476872957342
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873823548634286089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c5a62861c587774ab5315eec75ddbb1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6095976203685198018
 GameObject:
   m_ObjectHideFlags: 0
