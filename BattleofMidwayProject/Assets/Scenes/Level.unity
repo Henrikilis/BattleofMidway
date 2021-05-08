@@ -3248,6 +3248,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419536958}
   m_CullTransparentMesh: 0
+--- !u!1 &1491078828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1656609135318790527, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
+  m_PrefabInstance: {fileID: 1656609134448264045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1491078831
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491078828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0edb72b439ac45642b93d53eb78cd58f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1491078832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491078828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0cf3c049764984e9bba70945d4b336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deSpawn:
+  - {fileID: 2010028377}
+  - {fileID: 1981516284}
+  - {fileID: 1602949453}
+  _spawn:
+  - {fileID: 919588518}
 --- !u!1 &1527434180
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,24 +3563,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1656609135581450784, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
   m_PrefabInstance: {fileID: 1656609134448264045}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1602949454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602949453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0cf3c049764984e9bba70945d4b336, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _deSpawn:
-  - {fileID: 1602949453}
-  - {fileID: 1981516284}
-  - {fileID: 2010028377}
-  _spawn:
-  - {fileID: 919588518}
 --- !u!1 &1656143730
 GameObject:
   m_ObjectHideFlags: 0
@@ -4112,7 +4136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1790021015
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4766,7 +4790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1981516285
 Transform:
   m_ObjectHideFlags: 0
@@ -5272,13 +5296,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1656609135318790521, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
+      propertyPath: m_Size.x
+      value: 2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656609135318790521, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1775
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656609135318790521, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656609135318790521, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656609135318790527, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1656609135581450784, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1656609135581450784, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1656609135581450787, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
       propertyPath: m_RootOrder

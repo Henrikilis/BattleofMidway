@@ -12,12 +12,15 @@ public class playerCollision : MonoBehaviour
     float _bulletTimer;
     [Header("Damage Tag")]
     public string _damageTag;
-    public RestartGame rg;
+
+    private Animator _anim;
+    private PlayerController _pc;
 
     void Start()
     {
+        _pc = GetComponent<PlayerController>();
+        _anim = GetComponentInChildren<Animator>();
         _hp = _startHp;
-        rg = GetComponent<RestartGame>();
     }
 
     // Update is called once per frame
@@ -36,12 +39,14 @@ public class playerCollision : MonoBehaviour
             // GameOver
             if(_hp <= 0)
             {
-                rg.ResetGame();
+                _pc._canMove = false;
+                _anim.SetTrigger("Hasdied");                      
             }
         }
         if(collision.tag == "Enemy")
         {
-            rg.ResetGame();
+            _pc._canMove = false;
+            _anim.SetTrigger("Hasdied");       
         }
     }
 }

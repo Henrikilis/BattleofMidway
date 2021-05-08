@@ -10,9 +10,11 @@ public class PlayerController : MonoBehaviour
     private PlayerInputActions _playerInput;
     private Rigidbody2D _rb;
 
+    public bool _canMove;
     
     void Awake()
     {
+        _canMove = true;
         _playerInput = new PlayerInputActions();
         _rb = GetComponent<Rigidbody2D>();
     }
@@ -29,7 +31,10 @@ public class PlayerController : MonoBehaviour
     // Topdown Movement System
     void FixedUpdate()
     {
-        Vector2 _moveInput = _playerInput.Movement.Move.ReadValue<Vector2>();
-        _rb.velocity = _moveInput * _moveSpeed;
+        if (_canMove)
+        {
+            Vector2 _moveInput = _playerInput.Movement.Move.ReadValue<Vector2>();
+            _rb.velocity = _moveInput * _moveSpeed;
+        }
     }
 }
