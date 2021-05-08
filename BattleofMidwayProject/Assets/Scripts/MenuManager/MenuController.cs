@@ -8,6 +8,8 @@ public class MenuController : MonoBehaviour
 {
     public GameObject [] _deSpawn;
     public GameObject [] _spawn;
+    public GameObject controlsScreen;
+    
 
     public static bool _gameIsPaused = false;
 
@@ -23,6 +25,14 @@ public class MenuController : MonoBehaviour
             _spawn[i].gameObject.SetActive(true);
         }
 
+    }
+
+    public void Controls()
+    {
+        if(controlsScreen.gameObject.activeInHierarchy)
+        controlsScreen.gameObject.SetActive(false);
+        else
+        controlsScreen.gameObject.SetActive(true);
     }
 
     public void Restart()
