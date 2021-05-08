@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class playerCollision : MonoBehaviour
 {
@@ -16,11 +18,14 @@ public class playerCollision : MonoBehaviour
     private Animator _anim;
     private PlayerController _pc;
 
+    public TMP_Text _hpText;
+
     void Start()
     {
         _pc = GetComponent<PlayerController>();
         _anim = GetComponentInChildren<Animator>();
         _hp = _startHp;
+        _hpText.text = _hp.ToString();
     }
 
     // Update is called once per frame
@@ -35,10 +40,12 @@ public class playerCollision : MonoBehaviour
             
             _hp -= 1;
             _bulletTimer = _bulletCooldown;
+            _hpText.text = _hp.ToString();
             SimplePool.Despawn(collision.gameObject);
             // GameOver
             if(_hp <= 0)
             {
+                _hpText.color = Color.red;
                 _pc._moveSpeed = 0;
                 _pc._canMove = false;
                 _anim.SetTrigger("Hasdied");                      
@@ -46,6 +53,8 @@ public class playerCollision : MonoBehaviour
         }
         if(collision.tag == "Enemy")
         {
+            _hpText.color = Color.red;
+            _hpText.text = "ERROR";
             _pc._moveSpeed = 0;
             _pc._canMove = false;
             _anim.SetTrigger("Hasdied");       
