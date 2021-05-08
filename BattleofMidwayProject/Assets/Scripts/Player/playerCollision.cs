@@ -12,10 +12,12 @@ public class playerCollision : MonoBehaviour
     float _bulletTimer;
     [Header("Damage Tag")]
     public string _damageTag;
+    public RestartGame rg;
 
     void Start()
     {
         _hp = _startHp;
+        rg = GetComponent<RestartGame>();
     }
 
     // Update is called once per frame
@@ -34,9 +36,12 @@ public class playerCollision : MonoBehaviour
             // GameOver
             if(_hp <= 0)
             {
-                Destroy(this.gameObject);
-
+                rg.ResetGame();
             }
+        }
+        if(collision.tag == "Enemy")
+        {
+            rg.ResetGame();
         }
     }
 }

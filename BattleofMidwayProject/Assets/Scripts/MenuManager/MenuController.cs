@@ -11,11 +11,6 @@ public class MenuController : MonoBehaviour
 
     public static bool _gameIsPaused = false;
 
-    void Start()
-    {
-        
-    }
-
     public void PlayGame()
     {
         for (int i = 0; i < _deSpawn.Length; i++)
@@ -27,6 +22,12 @@ public class MenuController : MonoBehaviour
         {
             _spawn[i].gameObject.SetActive(true);
         }
+
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
 
     }
 
