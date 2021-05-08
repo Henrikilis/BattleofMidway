@@ -8,6 +8,7 @@ TagManager:
   - FriendlyBullet
   - Enemy
   - Floor
+  - Ceiling
   layers:
   - Default
   - TransparentFX

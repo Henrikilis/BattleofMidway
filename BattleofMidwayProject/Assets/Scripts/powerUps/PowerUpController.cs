@@ -39,7 +39,6 @@ public class PowerUpController : MonoBehaviour
                 {
                     _changed = true;
                     _activePowerUps.Remove(powerUp);
-                    powerUp.End();
                 }
             }
         }

@@ -11,9 +11,6 @@ public class PowerUp
     public string _name;
 
     [SerializeField]
-    public int _type;
-
-    [SerializeField]
     public int _dropChance;
 
     [SerializeField]
@@ -25,12 +22,6 @@ public class PowerUp
     [SerializeField]
     public UnityEvent _startAction;
 
-    [SerializeField]
-    public UnityEvent _endAction;
-
-    [SerializeField]
-    public UnityEvent _dropAction;
-
     public void Start()
     {
         if (_startAction != null)
@@ -38,21 +29,4 @@ public class PowerUp
             _startAction.Invoke();
         }
     }
-
-    public void End()
-    {
-        if(_endAction != null)
-        {
-            _endAction.Invoke();
-        }
-    }
-
-    public void Drop()
-    {
-        if (_dropAction != null)
-        {
-            _dropAction.Invoke();
-        }
-    }
-
 }

@@ -7,10 +7,12 @@ public class Bullet : MonoBehaviour
     
     public Vector2 _velocity;
     public float _speed;
+    private BoxCollider2D _bc;
     public float _rotation;
     void Start()
     {
         transform.rotation = Quaternion.Euler(0, 0, _rotation);
+        _bc = GetComponent<BoxCollider2D>();
     }
 
     // Bullet Movement
@@ -18,4 +20,5 @@ public class Bullet : MonoBehaviour
     {     
         transform.Translate(_velocity * _speed * Time.deltaTime);
     }
+    
 }

@@ -8,7 +8,7 @@ public class playerCollision : MonoBehaviour
 {
     [Header ("Player's HP")]
     public int _startHp;
-    private int _hp;
+    public int _hp;
     [Header("Cooldown After Hit")]
     public float _bulletCooldown;
     float _bulletTimer;
