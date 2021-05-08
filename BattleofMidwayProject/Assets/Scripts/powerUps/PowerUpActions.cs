@@ -11,11 +11,12 @@ public class PowerUpActions : MonoBehaviour
 
     public void IncreaseSpeed()
     {
-        _playerController._moveSpeed += 2;
+        _playerController._moveSpeed += 1;
+        Debug.Log(_playerController._moveSpeed);
 
-        if(_playerController._moveSpeed >= 24)
+        if(_playerController._moveSpeed >= 14)
         {
-            _playerController._moveSpeed = 24;
+            _playerController._moveSpeed = 15;
         }
     }
 

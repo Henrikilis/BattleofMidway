@@ -9,7 +9,7 @@ public class PowerUpController : MonoBehaviour
     public List<PowerUp> _powerUps;
 
     public Dictionary<PowerUp, float> _activePowerUps = new Dictionary<PowerUp, float>();
-
+    public int _chance;
     private List<PowerUp> _keys = new List<PowerUp>();
     
     void Start()
@@ -68,20 +68,23 @@ public class PowerUpController : MonoBehaviour
 
     public GameObject SpawnPowerUp(PowerUp powerUp, Vector2 position)
     {
-        GameObject _powerUpGameObject = Instantiate(_powerupPrefab);
+        _chance = Random.Range(0, powerUp._dropChance+1);
 
-        var _powerUpBehavior = _powerUpGameObject.GetComponent<PowerUpBehavior>();
-        SpriteRenderer _sr = _powerUpGameObject.GetComponent<SpriteRenderer>();
+        if (_chance == powerUp._dropChance)
+        {
 
-        _powerUpBehavior._controller = this;
-        _powerUpBehavior.SetPowerup(powerUp);
-        _sr.sprite = powerUp._sprite;
-        _powerUpGameObject.transform.position = position;
+            GameObject _powerUpGameObject = Instantiate(_powerupPrefab);
 
+            var _powerUpBehavior = _powerUpGameObject.GetComponent<PowerUpBehavior>();
+            SpriteRenderer _sr = _powerUpGameObject.GetComponent<SpriteRenderer>();
 
+            _powerUpBehavior._controller = this;
+            _powerUpBehavior.SetPowerup(powerUp);
+            _sr.sprite = powerUp._sprite;
+            _powerUpGameObject.transform.position = position;
 
-        return _powerUpGameObject;
-
+            return _powerUpGameObject;
+        }
+        else return null;
     }
-
 }

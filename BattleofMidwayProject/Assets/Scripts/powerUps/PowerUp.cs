@@ -14,7 +14,7 @@ public class PowerUp
     public int _type;
 
     [SerializeField]
-    public float _dropChance;
+    public int _dropChance;
 
     [SerializeField]
     public float _duration;
