@@ -71,9 +71,11 @@ public class PowerUpController : MonoBehaviour
         GameObject _powerUpGameObject = Instantiate(_powerupPrefab);
 
         var _powerUpBehavior = _powerUpGameObject.GetComponent<PowerUpBehavior>();
+        SpriteRenderer _sr = _powerUpGameObject.GetComponent<SpriteRenderer>();
+
         _powerUpBehavior._controller = this;
         _powerUpBehavior.SetPowerup(powerUp);
-
+        _sr.sprite = powerUp._sprite;
         _powerUpGameObject.transform.position = position;
 
 

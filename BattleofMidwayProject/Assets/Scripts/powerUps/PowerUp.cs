@@ -20,6 +20,9 @@ public class PowerUp
     public float _duration;
 
     [SerializeField]
+    public Sprite _sprite;
+
+    [SerializeField]
     public UnityEvent _startAction;
 
     [SerializeField]

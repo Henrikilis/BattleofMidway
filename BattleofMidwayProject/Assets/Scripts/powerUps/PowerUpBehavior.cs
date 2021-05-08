@@ -18,7 +18,7 @@ public class PowerUpBehavior : MonoBehaviour
 
     private void ActivatePowerup()
     {
-       // _controller.ActivatePowerUp(_powerUp);
+        _controller.ActivatePowerUp(_powerUp);
     }
 
     public void SetPowerup(PowerUp powerUp)

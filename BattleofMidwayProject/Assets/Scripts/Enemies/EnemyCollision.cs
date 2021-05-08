@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
+    public PowerUpController _pc;
     public Animator _anim;
     private BoxCollider2D _bc;
 
     private void Start()
     {
+        _pc = FindObjectOfType<PowerUpController>();
         _anim = GetComponent<Animator>();
         _bc = GetComponent<BoxCollider2D>();
     }
@@ -17,6 +19,7 @@ public class EnemyCollision : MonoBehaviour
     {
         if (collision.tag == "FriendlyBullet")
         {
+            _pc.SpawnPowerUp(_pc._powerUps[Random.Range(0, _pc._powerUps.Capacity)], gameObject.transform.position);
             _bc.enabled = false;
             _anim.SetTrigger("EnemyDead");                
         }
