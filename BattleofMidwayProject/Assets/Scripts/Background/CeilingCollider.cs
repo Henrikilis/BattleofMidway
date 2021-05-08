@@ -9,7 +9,6 @@ public class CeilingCollider : MonoBehaviour
     {
         if (collision.tag == "FriendlyBullet")
         {
-            Debug.Log("dale");
             SimplePool.Despawn(collision.gameObject);
         }
     }

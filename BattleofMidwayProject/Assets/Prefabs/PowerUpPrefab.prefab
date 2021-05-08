@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4377850279771513088}
   - component: {fileID: 4377850279771513119}
   - component: {fileID: 4377850279771513090}
+  - component: {fileID: 6400707280344691845}
   m_Layer: 0
   m_Name: PowerUpPrefab
   m_TagString: Untagged
@@ -125,16 +126,23 @@ MonoBehaviour:
   _controller: {fileID: 0}
   _powerUp:
     _name: 
-    _type: 0
     _dropChance: 0
     _duration: 0
     _sprite: {fileID: 0}
     _startAction:
       m_PersistentCalls:
         m_Calls: []
-    _endAction:
-      m_PersistentCalls:
-        m_Calls: []
-    _dropAction:
-      m_PersistentCalls:
-        m_Calls: []
+--- !u!114 &6400707280344691845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4377850279771513118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2de5d5b1847859409edf3039c96215b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shipVelocity: {x: 0, y: -1}
+  _shipSpeed: 3
