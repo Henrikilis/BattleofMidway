@@ -48,6 +48,6 @@ TagManager:
   - name: Background
     uniqueID: 3191056493
     locked: 0
-  - name: Bullet
+  - name: Front
     uniqueID: 3152178711
     locked: 0

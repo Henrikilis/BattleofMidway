@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     }
 
     // Bullet Movement
-    void Update()
+    void LateUpdate()
     {     
         transform.Translate(_velocity * _speed * Time.deltaTime);
     }

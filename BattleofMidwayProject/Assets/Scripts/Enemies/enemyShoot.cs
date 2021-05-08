@@ -18,7 +18,7 @@ public class enemyShoot : MonoBehaviour
 
     void Start()
     {
-      //  _b = _bullet.GetComponent<Bullet>();
+        _b = _bullet.GetComponent<Bullet>();
         fireInterval = Random.Range(0, 10);   
         SimplePool.Preload(_bullet, 5);     
     }
@@ -26,8 +26,8 @@ public class enemyShoot : MonoBehaviour
     
     void FixedUpdate()
     {
-      //  _b._velocity = bulletVelocity;
-      //  _b._speed = bulletSpeed;
+        _b._velocity = bulletVelocity;
+        _b._speed = bulletSpeed;
 
         if (fireRate < fireInterval)
             fireRate += Time.deltaTime;

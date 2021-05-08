@@ -17,7 +17,7 @@ public class PlayerBullet : MonoBehaviour
     public float bulletSpeed;
     public Vector2 bulletVelocity;
 
-    void Start()
+    void Awake()
     {
         _b = _simpleBullet.GetComponent<Bullet>();
         _playerInput = new PlayerInputActions();
