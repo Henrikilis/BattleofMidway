@@ -39,12 +39,14 @@ public class playerCollision : MonoBehaviour
             // GameOver
             if(_hp <= 0)
             {
+                _pc._moveSpeed = 0;
                 _pc._canMove = false;
                 _anim.SetTrigger("Hasdied");                      
             }
         }
         if(collision.tag == "Enemy")
         {
+            _pc._moveSpeed = 0;
             _pc._canMove = false;
             _anim.SetTrigger("Hasdied");       
         }

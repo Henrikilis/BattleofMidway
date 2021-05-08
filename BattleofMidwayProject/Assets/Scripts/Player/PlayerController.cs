@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Ship Speed")]
-    [SerializeField]
-    private float _moveSpeed;
+    
+    public float _moveSpeed;
     private PlayerInputActions _playerInput;
     private Rigidbody2D _rb;
 
@@ -31,6 +31,13 @@ public class PlayerController : MonoBehaviour
     // Topdown Movement System
     void FixedUpdate()
     {
+
+        if (!_canMove)
+        {
+            _rb.velocity = new Vector2(0,0);
+
+        }
+
         if (_canMove)
         {
             Vector2 _moveInput = _playerInput.Movement.Move.ReadValue<Vector2>();
