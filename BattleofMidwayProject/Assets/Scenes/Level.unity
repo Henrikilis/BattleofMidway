@@ -2484,6 +2484,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &746054153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746054154}
+  m_Layer: 0
+  m_Name: BossSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &746054154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746054153}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.06, y: -6.43, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1315537779}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808839645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,6 +3510,7 @@ Transform:
   - {fileID: 338210687}
   - {fileID: 1256852343}
   - {fileID: 310731801}
+  - {fileID: 746054154}
   m_Father: {fileID: 1981516285}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6005,32 +6036,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waves:
   - _waveName: Wave One
-    _noOfEnemies: 10
+    _noOfEnemies: 1
     _typeOfEnemies:
     - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
     _spawnInterval: 2
   - _waveName: Wave Two
-    _noOfEnemies: 20
-    _typeOfEnemies:
-    - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
-    - {fileID: 2873823548634286089, guid: ae877cee291626b4fb774dbef5b9960f, type: 3}
-    _spawnInterval: 1
-  - _waveName: Wave Three
-    _noOfEnemies: 30
-    _typeOfEnemies:
-    - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
-    - {fileID: 2873823548634286089, guid: ae877cee291626b4fb774dbef5b9960f, type: 3}
-    _spawnInterval: 1
-  - _waveName: Wave Four
-    _noOfEnemies: 40
-    _typeOfEnemies:
-    - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
-    - {fileID: 2873823548634286089, guid: ae877cee291626b4fb774dbef5b9960f, type: 3}
-    _spawnInterval: 0.5
-  - _waveName: Final Boss!
     _noOfEnemies: 1
     _typeOfEnemies:
-    - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
+    - {fileID: 2873823548634286089, guid: a217f43b14b4ad44c919de752568129b, type: 3}
     _spawnInterval: 2
   _animator: {fileID: 1981516287}
   _spawnPoints:
@@ -6050,7 +6063,8 @@ MonoBehaviour:
   - {fileID: 1256852343}
   - {fileID: 310731801}
   _waveName: {fileID: 869922353}
-  end: {fileID: 0}
+  _end: {fileID: 0}
+  _bossSpawnPoint: {fileID: 746054154}
 --- !u!95 &1981516287
 Animator:
   serializedVersion: 3

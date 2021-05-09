@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class BossCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public int _bossInitialHP;
+    private int _bossCurrentHP;
+    public Animator _anim;
+    private BoxCollider2D _bc;
+    public EndGame _end;
+
+    private void Start()
     {
-        
+        _end = FindObjectOfType<EndGame>();
+        _anim = GetComponent<Animator>();
+        _bc = GetComponent<BoxCollider2D>();
+        _bossCurrentHP = _bossInitialHP;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.tag == "FriendlyBullet")
+        {
+            _bossCurrentHP--;
+            SimplePool.Despawn(collision.gameObject);
+            if (_bossCurrentHP == 0)
+            {
+                _anim.SetTrigger("hasDied");
+            }
+        }
+    }
+
+    public void DestroyShip()
+    {
+        _end.endGame();
+        Destroy(this.gameObject);
     }
 }

@@ -22,21 +22,24 @@ public class EnemySpawner : MonoBehaviour
     public Animator _animator;
     public Transform[] _spawnPoints;
     public TMP_Text _waveName;
-    public EndGame end;
+    public EndGame _end;
+    public Transform _bossSpawnPoint;
 
     private Wave _currentWave;
     private int _currentWaveNo;
     private float _nextSpawnTime;
     private bool _hasPrepared;
     private bool _canSpawn;
-    private bool _canAnimate;   
+    private bool _canAnimate;
+    private bool _spawnedBoss;
 
     private void Start()
     {
-        end = GetComponent<EndGame>();
+        _end = GetComponent<EndGame>();
         _canSpawn = true;
         _hasPrepared = false;
-        _canAnimate = false;     
+        _canAnimate = false;
+        _spawnedBoss = false;
 
     }
 
@@ -69,7 +72,7 @@ public class EnemySpawner : MonoBehaviour
                 } 
             }
             else          
-            end.endGame();         
+            _end.endGame();         
         }
         
     }
@@ -81,15 +84,23 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnWave()
-    {      
-            GameObject _randomEnemy = _currentWave._typeOfEnemies[Random.Range(0, _currentWave._typeOfEnemies.Length)];
-            Transform _randomPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
-           // SimplePool.Spawn(_randomEnemy, _randomPoint.position, Quaternion.identity);
+    {
+
+        GameObject _randomEnemy = _currentWave._typeOfEnemies[Random.Range(0, _currentWave._typeOfEnemies.Length)];
+        Transform _randomPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
+
+        if (_currentWaveNo + 1 == _waves.Length && !_spawnedBoss)
+        {
+            Instantiate(_randomEnemy, _bossSpawnPoint.position, Quaternion.identity);
+            _spawnedBoss = true;
+        }
+        else if(_currentWaveNo + 1 != _waves.Length)
+        {
             Instantiate(_randomEnemy, _randomPoint.position, Quaternion.identity);
-        
+
             _currentWave._noOfEnemies--;
             _nextSpawnTime = Time.time + _currentWave._spawnInterval;
-
+        }
         //Check to end spawns on current wave
         if (_currentWave._noOfEnemies == 0)
         {
