@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1840517898354852900}
   - component: {fileID: 7583527864620909779}
   - component: {fileID: 4714074993529315284}
+  - component: {fileID: 356462192404967321}
   m_Layer: 0
   m_Name: EnemyShip2
   m_TagString: Enemy
@@ -218,6 +219,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &356462192404967321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873823548634286089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2de5d5b1847859409edf3039c96215b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shipVelocity: {x: 0, y: -1}
+  _shipSpeed: 3
 --- !u!1 &6095976203685198018
 GameObject:
   m_ObjectHideFlags: 0
