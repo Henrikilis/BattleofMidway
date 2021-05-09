@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
                 _as.PlayOneShot(_powerUp);
                 break;
             case "bossattack2":
-                _as.volume = 0.7f;
+                _as.volume = 0.4f;
                 _as.PlayOneShot(_bossAttack2);
                 break;
         }

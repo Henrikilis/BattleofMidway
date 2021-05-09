@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
+    public int _scoreValue;
     public PowerUpController _pc;
     public Animator _anim;
     private BoxCollider2D _bc;
@@ -23,7 +24,7 @@ public class EnemyCollision : MonoBehaviour
     {
         if (collision.tag == "FriendlyBullet")
         {
-
+            
             int random = Random.Range(0, _pc._powerUps.Capacity);        
             _pc.SpawnPowerUp(_pc._powerUps[random], gameObject.transform.position);
             _am.PlaySound("explosion");
@@ -39,6 +40,7 @@ public class EnemyCollision : MonoBehaviour
 
     public void DestroyShip()
     {
+        ScoreSystem.updateScore(_scoreValue);
         Destroy(this.gameObject);
     }
 

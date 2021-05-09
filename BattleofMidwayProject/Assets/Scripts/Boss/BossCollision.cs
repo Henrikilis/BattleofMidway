@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossCollision : MonoBehaviour
 {
-
+    public int _scoreValue;
     public int _bossInitialHP;
     private int _bossCurrentHP;
     public Animator _anim;
@@ -28,6 +28,7 @@ public class BossCollision : MonoBehaviour
             SimplePool.Despawn(collision.gameObject);
             if (_bossCurrentHP == 0)
             {
+                 ScoreSystem.updateScore(_scoreValue);
                 _anim.SetTrigger("hasDied");
             }
         }
