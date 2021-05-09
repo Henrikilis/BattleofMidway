@@ -13,10 +13,12 @@ public class enemyShoot : MonoBehaviour
     public float _maxRandom;
 
     [Header("Bullet Propreties")]
-    public float _bulletSpeed;
-    public Vector2 _bulletVelocity;
+    [SerializeField]
+    private float _bulletSpeed;
+    [SerializeField]
+    private Vector2 _bulletVelocity;
 
-    void Start()
+    void Awake()
     {
         _fireInterval = Random.Range(0, 10);   
         SimplePool.Preload(_bullet, 5);

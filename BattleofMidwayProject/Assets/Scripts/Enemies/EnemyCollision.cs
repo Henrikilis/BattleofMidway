@@ -38,9 +38,13 @@ public class EnemyCollision : MonoBehaviour
         }
     }
 
-    public void DestroyShip()
+    public void DestroyShipWithScore()
     {
         ScoreSystem.updateScore(_scoreValue);
+        Destroy(this.gameObject);
+    }
+    public void DestroyShip()
+    {
         Destroy(this.gameObject);
     }
 
