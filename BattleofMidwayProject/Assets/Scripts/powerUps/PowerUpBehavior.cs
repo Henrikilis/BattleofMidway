@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerUpBehavior : MonoBehaviour
 {
     public PowerUpController _controller;
+    private AudioSource _as;
 
     [SerializeField]
     private PowerUp _powerUp;
@@ -14,6 +15,7 @@ public class PowerUpBehavior : MonoBehaviour
     private void Awake()
     {
         _transform = transform;
+        _as = GetComponent<AudioSource>();
     }
 
     private void ActivatePowerup()
@@ -32,6 +34,7 @@ public class PowerUpBehavior : MonoBehaviour
     {
        if(collision.gameObject.tag == "Player")
         {
+            _as.Play();
             ActivatePowerup();
             gameObject.SetActive(false);
         }     

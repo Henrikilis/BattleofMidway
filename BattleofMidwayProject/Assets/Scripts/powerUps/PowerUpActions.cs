@@ -22,11 +22,11 @@ public class PowerUpActions : MonoBehaviour
 
     public void IncreaseFireRate()
     {      
-       _playerBullet.fireInterval -= 0.2f;
+       _playerBullet._fireInterval -= 0.2f;
 
-        if(_playerBullet.fireInterval <= 0)
+        if(_playerBullet._fireInterval <= 0)
         {
-            _playerBullet.fireInterval = 0;
+            _playerBullet._fireInterval = 0;
         }
     }
     public void Heal()

@@ -198,8 +198,8 @@ MonoBehaviour:
   - {fileID: 1926591854242731878}
   _bullet: {fileID: 1208552257291661453, guid: 4992ed43034218d41b8a1312cfff2c59, type: 3}
   _maxRandom: 5
-  bulletSpeed: 10
-  bulletVelocity: {x: 0, y: -1}
+  _bulletSpeed: 14
+  _bulletVelocity: {x: 0, y: -1}
 --- !u!95 &4714074993529315284
 Animator:
   serializedVersion: 3

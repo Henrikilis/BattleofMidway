@@ -16,9 +16,15 @@ public class Bullet : MonoBehaviour
     }
 
     // Bullet Movement
-    void LateUpdate()
+    void FixedUpdate()
     {     
         transform.Translate(_velocity * _speed * Time.deltaTime);
     }
-    
+
+    public void SetMoveDirection(Vector2 _dir, float _spd)
+    {
+        _speed = _spd;
+        _velocity = _dir;
+
+    }
 }
