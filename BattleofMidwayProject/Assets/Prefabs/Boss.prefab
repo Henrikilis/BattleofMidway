@@ -183,7 +183,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 64813ff7fde8b5e4ea9bc80bc5b917b5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -238,10 +238,13 @@ MonoBehaviour:
   _muzzleRight: {fileID: 1771515869110169378}
   _muzzleHead: {fileID: 5974237798753852989}
   _bullet: {fileID: 1208552257291661453, guid: 4992ed43034218d41b8a1312cfff2c59, type: 3}
-  _projectile: {fileID: 0}
+  _projectile: {fileID: 1208552257291661453, guid: 2a0e90ea4959f0441ac7c2fafa846bbc, type: 3}
   _bossDecision: 0
   bulletSpeed: 20
   bulletVelocity: {x: 0, y: -1}
+  _bulletsAmount: 10
+  _startAngle: 0
+  _endAngle: 0
 --- !u!1 &3737532108101443839
 GameObject:
   m_ObjectHideFlags: 0
