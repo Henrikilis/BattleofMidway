@@ -7,12 +7,14 @@ public class EnemyCollision : MonoBehaviour
     public PowerUpController _pc;
     public Animator _anim;
     private BoxCollider2D _bc;
+    private AudioManager _am;
 
     private void Start()
     {
         _pc = FindObjectOfType<PowerUpController>();
         _anim = GetComponent<Animator>();
         _bc = GetComponent<BoxCollider2D>();
+        _am = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +24,7 @@ public class EnemyCollision : MonoBehaviour
 
             int random = Random.Range(0, _pc._powerUps.Capacity);        
             _pc.SpawnPowerUp(_pc._powerUps[random], gameObject.transform.position);
-
+            _am.PlaySound("explosion");
             _bc.enabled = false;
             _anim.SetTrigger("EnemyDead");                
         }

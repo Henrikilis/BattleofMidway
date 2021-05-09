@@ -24,15 +24,19 @@ public class AudioManager : MonoBehaviour
         switch (clip)
         {
             case "explosion":
+                _as.volume = 0.1f;
                 _as.PlayOneShot(_explosion);
                 break;
             case "gameover":
+                _as.volume = 1f;
                 _as.PlayOneShot(_gameOver);
                 break;
             case "powerup":
+                _as.volume = 0.5f;
                 _as.PlayOneShot(_powerUp);
                 break;
             case "bossattack2":
+                _as.volume = 0.7f;
                 _as.PlayOneShot(_bossAttack2);
                 break;
         }

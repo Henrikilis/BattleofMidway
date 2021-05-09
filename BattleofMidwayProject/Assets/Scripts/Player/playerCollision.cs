@@ -17,7 +17,7 @@ public class playerCollision : MonoBehaviour
 
     private Animator _anim;
     private PlayerController _pc;
-
+    private AudioManager _am;
     public TMP_Text _hpText;
     private SpriteRenderer _sr;
 
@@ -28,6 +28,7 @@ public class playerCollision : MonoBehaviour
         _sr = GetComponentInChildren<SpriteRenderer>();
         _hp = _startHp;
         _hpText.text = _hp.ToString();
+        _am = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -55,6 +56,7 @@ public class playerCollision : MonoBehaviour
             // GameOver
             if(_hp <= 0)
             {
+                _am.PlaySound("gameover");
                 _hpText.color = Color.red;
                 _pc._moveSpeed = 0;
                 _pc._canMove = false;

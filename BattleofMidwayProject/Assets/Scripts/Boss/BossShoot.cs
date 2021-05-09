@@ -32,10 +32,12 @@ public class BossShoot : MonoBehaviour
     [SerializeField]
     private float _endAngle;
 
+    private AudioManager _am;
+
 
     void Start()
     {
-
+        _am = FindObjectOfType<AudioManager>();
         _startAngle = 90f;
         _endAngle = 270f;
         _anim.GetComponent<Animator>();
@@ -89,6 +91,7 @@ public class BossShoot : MonoBehaviour
 
     void ShootHead()
     {
+        _am.PlaySound("bossattack2");
         float _angleStep = (_endAngle - _startAngle) / _bulletsAmount;
         float _angle = _startAngle;
 
