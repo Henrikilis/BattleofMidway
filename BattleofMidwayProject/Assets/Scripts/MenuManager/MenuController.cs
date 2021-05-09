@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuController : MonoBehaviour
 {
     public GameObject [] _deSpawn;
     public GameObject [] _spawn;
     public GameObject controlsScreen;
-    
+
+    public  TMP_Text _highScoreText;
+
 
     public static bool _gameIsPaused = false;
+
+    public void Start()
+    {
+        _highScoreText.text = "HIGHSCORE: " + PlayerPrefs.GetInt("highscore");
+    }
 
     public void PlayGame()
     {
