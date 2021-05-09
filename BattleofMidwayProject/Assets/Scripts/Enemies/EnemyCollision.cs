@@ -7,15 +7,12 @@ public class EnemyCollision : MonoBehaviour
     public PowerUpController _pc;
     public Animator _anim;
     private BoxCollider2D _bc;
-    [SerializeField]
-    private int _spawnChance;
 
     private void Start()
     {
         _pc = FindObjectOfType<PowerUpController>();
         _anim = GetComponent<Animator>();
         _bc = GetComponent<BoxCollider2D>();
-        _spawnChance = Random.Range(1, 6);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

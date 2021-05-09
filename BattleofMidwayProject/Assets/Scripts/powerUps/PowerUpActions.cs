@@ -37,4 +37,9 @@ public class PowerUpActions : MonoBehaviour
             _playerCollision._hpText.text = _playerCollision._hp.ToString();
         }
     }
+    public void MoreShots()
+    {
+
+
+    }
 }

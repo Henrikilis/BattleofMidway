@@ -4529,6 +4529,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - _name: moreShots
+    _dropChance: 5
+    _duration: 0
+    _sprite: {fileID: 21300000, guid: 6ee007980a6949748b3e4473501ad1cb, type: 3}
+    _startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1677536551}
+          m_TargetAssemblyTypeName: PowerUpActions, Assembly-CSharp
+          m_MethodName: MoreShots
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _chance: 0
 --- !u!114 &1677536551
 MonoBehaviour:
@@ -5986,7 +6005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waves:
   - _waveName: Wave One
-    _noOfEnemies: 10
+    _noOfEnemies: 1
     _typeOfEnemies:
     - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
     _spawnInterval: 2
@@ -5994,12 +6013,25 @@ MonoBehaviour:
     _noOfEnemies: 20
     _typeOfEnemies:
     - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
+    - {fileID: 2873823548634286089, guid: ae877cee291626b4fb774dbef5b9960f, type: 3}
     _spawnInterval: 1
-  - _waveName: Final Boss!
+  - _waveName: Wave Three
     _noOfEnemies: 30
     _typeOfEnemies:
     - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
+    - {fileID: 2873823548634286089, guid: ae877cee291626b4fb774dbef5b9960f, type: 3}
     _spawnInterval: 1
+  - _waveName: Wave Four
+    _noOfEnemies: 40
+    _typeOfEnemies:
+    - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
+    - {fileID: 2873823548634286089, guid: ae877cee291626b4fb774dbef5b9960f, type: 3}
+    _spawnInterval: 0.5
+  - _waveName: Final Boss!
+    _noOfEnemies: 1
+    _typeOfEnemies:
+    - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
+    _spawnInterval: 2
   _animator: {fileID: 1981516287}
   _spawnPoints:
   - {fileID: 808839646}

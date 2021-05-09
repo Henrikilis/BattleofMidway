@@ -47,7 +47,6 @@ public class EnemySpawner : MonoBehaviour
         
         if (!_hasPrepared)
         {
-           // prepareWave();
             _hasPrepared = true;
         }
         if (_canSpawn && _nextSpawnTime < Time.time)
@@ -79,14 +78,6 @@ public class EnemySpawner : MonoBehaviour
     {      
         _currentWaveNo++;
         _canSpawn = true;
-    }
-
-    void prepareWave()
-    {
-        GameObject _randomEnemy = _currentWave._typeOfEnemies[Random.Range(0, _currentWave._typeOfEnemies.Length)];
-        Transform _randomPoint  = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
-       
-        SimplePool.Preload(_randomEnemy, 30);
     }
 
     void SpawnWave()

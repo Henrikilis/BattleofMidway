@@ -9,8 +9,10 @@ public class enemyShoot : MonoBehaviour
     public GameObject[] _muzzles;
     public GameObject _bullet;
 
-    public float fireInterval;
-    private float fireRate;
+    private float _fireInterval;
+    private float _fireRate;
+
+    public float _maxRandom;
 
     [Header("Bullet Propreties")]
     public float bulletSpeed;
@@ -19,7 +21,7 @@ public class enemyShoot : MonoBehaviour
     void Start()
     {
         _b = _bullet.GetComponent<Bullet>();
-        fireInterval = Random.Range(0, 10);   
+        _fireInterval = Random.Range(0, 10);   
         SimplePool.Preload(_bullet, 5);     
     }
 
@@ -29,18 +31,18 @@ public class enemyShoot : MonoBehaviour
         _b._velocity = bulletVelocity;
         _b._speed = bulletSpeed;
 
-        if (fireRate < fireInterval)
-            fireRate += Time.deltaTime;
-        else if (fireRate >= fireInterval)
+        if (_fireRate < _fireInterval)
+            _fireRate += Time.deltaTime;
+        else if (_fireRate >= _fireInterval)
         {
-            fireRate = 0;
+            _fireRate = 0;
             EnemyShot();
         }
     }
 
     void EnemyShot()
     {
-        fireInterval = Random.Range(0, 10);
+        _fireInterval = Random.Range(0, _maxRandom);
         foreach (GameObject obj in _muzzles)
         {       
             GameObject bullet = SimplePool.Spawn(_bullet, obj.gameObject.transform.position, Quaternion.identity);          
