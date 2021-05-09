@@ -6005,7 +6005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waves:
   - _waveName: Wave One
-    _noOfEnemies: 1
+    _noOfEnemies: 10
     _typeOfEnemies:
     - {fileID: 2873823548634286089, guid: 3b35a31d7a1c97640a72dacab9538dfb, type: 3}
     _spawnInterval: 2
