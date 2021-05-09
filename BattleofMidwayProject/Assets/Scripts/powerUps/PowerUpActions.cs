@@ -39,7 +39,7 @@ public class PowerUpActions : MonoBehaviour
     }
     public void MoreShots()
     {
-
-
+        if (_playerBullet._fireType == 0)
+            _playerBullet._fireType++;
     }
 }

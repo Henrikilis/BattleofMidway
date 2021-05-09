@@ -6,18 +6,21 @@ using UnityEngine.InputSystem;
 public class PlayerBullet : MonoBehaviour
 {
     public GameObject[] _muzzles;
+    public GameObject[] _muzzles2;
     private PlayerInputActions _playerInput;
     public GameObject _simpleBullet;
 
     public float _fireInterval;
     private float _fireRate;
 
+    public int _fireType;
     [Header("Bullet Propreties")]
     public float _bulletSpeed;
     public Vector2 _bulletVelocity;
 
     void Awake()
     {
+        _fireType = 0;
         _playerInput = new PlayerInputActions();
         SimplePool.Preload(_simpleBullet, 30);
         _fireRate = _fireInterval;
@@ -45,14 +48,26 @@ public class PlayerBullet : MonoBehaviour
 
     void spawnBullet()
     {
-
-        foreach (GameObject obj in _muzzles)
+        if (_fireType == 0)
         {
-           GameObject _bullet  = SimplePool.Spawn(_simpleBullet, obj.gameObject.transform.position, Quaternion.identity);
-            _bullet.GetComponent<Bullet>().SetMoveDirection(_bulletVelocity, _bulletSpeed);
-            _bullet.transform.tag = "FriendlyBullet";
+            foreach (GameObject obj in _muzzles)
+            {
+                GameObject _bullet = SimplePool.Spawn(_simpleBullet, obj.gameObject.transform.position, Quaternion.identity);
+                _bullet.GetComponent<Bullet>().SetMoveDirection(_bulletVelocity, _bulletSpeed);
+                _bullet.transform.tag = "FriendlyBullet";
+            }
         }
-        
+        if (_fireType == 1)
+        {
+            foreach (GameObject obj in _muzzles2)
+            {
+               GameObject _bullet = SimplePool.Spawn(_simpleBullet, obj.gameObject.transform.position, Quaternion.identity);
+               _bullet.transform.tag = "FriendlyBullet";
+               _bullet.GetComponent<Bullet>().SetMoveDirection(_bulletVelocity, _bulletSpeed);
+                
+            }
+
+        }
 
     }
     

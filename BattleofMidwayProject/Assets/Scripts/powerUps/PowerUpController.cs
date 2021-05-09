@@ -9,7 +9,7 @@ public class PowerUpController : MonoBehaviour
     public List<PowerUp> _powerUps;
 
     public Dictionary<PowerUp, float> _activePowerUps = new Dictionary<PowerUp, float>();
-    public int _chance;
+    private int _chance;
     private List<PowerUp> _keys = new List<PowerUp>();
     
     void Start()

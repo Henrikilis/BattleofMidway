@@ -7,6 +7,7 @@ public class EnemyCollision : MonoBehaviour
     public PowerUpController _pc;
     public Animator _anim;
     private BoxCollider2D _bc;
+    private enemyShoot _es;
     private AudioManager _am;
 
     private void Start()
@@ -14,6 +15,7 @@ public class EnemyCollision : MonoBehaviour
         _pc = FindObjectOfType<PowerUpController>();
         _anim = GetComponent<Animator>();
         _bc = GetComponent<BoxCollider2D>();
+        _es = GetComponent<enemyShoot>();
         _am = FindObjectOfType<AudioManager>();
     }
 
@@ -26,6 +28,7 @@ public class EnemyCollision : MonoBehaviour
             _pc.SpawnPowerUp(_pc._powerUps[random], gameObject.transform.position);
             _am.PlaySound("explosion");
             _bc.enabled = false;
+            _es.enabled = false;
             _anim.SetTrigger("EnemyDead");                
         }
         if (collision.tag == "Floor")

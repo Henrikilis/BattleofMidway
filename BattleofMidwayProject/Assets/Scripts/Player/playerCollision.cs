@@ -65,6 +65,7 @@ public class playerCollision : MonoBehaviour
         }
         if(collision.tag == "Enemy")
         {
+            _am.PlaySound("gameover");
             _hpText.color = Color.red;
             _hpText.text = "ERROR";
             _pc._moveSpeed = 0;

@@ -696,7 +696,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &195466710
 GameObject:
@@ -784,7 +784,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &245135407
 MonoBehaviour:
@@ -1818,7 +1818,7 @@ RectTransform:
   - {fileID: 1998533097}
   - {fileID: 1749388665}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3158,7 +3158,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &871920898
 BoxCollider2D:
@@ -3518,7 +3518,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078525450
 GameObject:
@@ -3959,7 +3959,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419536958
 GameObject:
@@ -4697,7 +4697,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1677536548
 GameObject:
@@ -4729,7 +4729,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1677536550
 MonoBehaviour:
@@ -4746,7 +4746,7 @@ MonoBehaviour:
   _powerupPrefab: {fileID: 4377850279771513118, guid: a5b03ed821b0ca54fa2755730ce6b950, type: 3}
   _powerUps:
   - _name: FireRate
-    _dropChance: 5
+    _dropChance: 4
     _duration: 0
     _sprite: {fileID: 21300000, guid: c99bb5ffee92aa345a7efcd6e79e9e96, type: 3}
     _startAction:
@@ -4821,7 +4821,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  _chance: 0
 --- !u!114 &1677536551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6262,7 +6261,7 @@ Transform:
   - {fileID: 1334468011}
   - {fileID: 1315537779}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1981516286
 MonoBehaviour:
@@ -6991,10 +6990,6 @@ PrefabInstance:
       propertyPath: _hpText
       value: 
       objectReference: {fileID: 1998533098}
-    - target: {fileID: 1602949456, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
-      propertyPath: _fireInterval
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1656609135581450784, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
       propertyPath: m_Name
       value: Player
