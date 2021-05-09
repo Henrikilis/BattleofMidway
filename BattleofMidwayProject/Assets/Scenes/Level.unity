@@ -6732,17 +6732,9 @@ PrefabInstance:
       propertyPath: _hpText
       value: 
       objectReference: {fileID: 1998533098}
-    - target: {fileID: 1602949456, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
-      propertyPath: fireInterval
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1656609135581450784, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1656609135581450784, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1656609135581450787, guid: 6b1ad1a005446a14a80a059057cc9531, type: 3}
       propertyPath: m_RootOrder
